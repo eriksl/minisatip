@@ -679,6 +679,9 @@ dvb_set_pid (adapter *a, uint16_t i_pid)
 		return -1;
 	}
 
+	if(ioctl(fd, DMX_SET_SOURCE, &ad))
+		LOG ("error setting source to %d: %s", ad, strerror(errno));
+
 	struct dmx_pes_filter_params s_filter_params;
 
 	memset(&s_filter_params, 0, sizeof(s_filter_params));
