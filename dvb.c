@@ -35,7 +35,6 @@
 #include <sys/ioctl.h>
 #include <net/if.h>
 #include <linux/dvb/frontend.h>
-#include <linux/dvb/dmx.h>
 #include <fcntl.h>
 #include <ctype.h>
 #include "dvb.h"
