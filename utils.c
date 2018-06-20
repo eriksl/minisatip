@@ -622,10 +622,16 @@ int endswith(char *src, char *with)
 extern _symbols adapters_sym[];
 extern _symbols minisatip_sym[];
 extern _symbols stream_sym[];
+#ifndef DISABLE_DVBCSA
 extern _symbols dvbapi_sym[];
+#endif
 
 _symbols *sym[] =
-{ adapters_sym, stream_sym, minisatip_sym, dvbapi_sym, NULL };
+{ adapters_sym, stream_sym, minisatip_sym,
+#ifndef DISABLE_DVBCSA
+	dvbapi_sym,
+#endif
+	NULL };
 
 int var_eval(char *orig, int len, char *dest, int max_len)
 {
